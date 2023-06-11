@@ -16,12 +16,11 @@ function SupportSection() {
                 <div className="grid md:grid-cols-2 gap-14">
                     <div className="flex justify-center items-center mr-6 px-6">
                         <div className="max-w-md">
-                            <h2 className="font-poppins font-semibold xl:text-6xl mb-6 leading-normal text-start text-slate-800 xs:text-3xl lg:text-3xl">
-                                Why choose us for your service
+                            <h2 className="font-poppins font-semibold xl:text-4xl mb-6 leading-normal text-start text-slate-800 xs:text-3xl lg:text-3xl">
+                                Why Tech Haven
                             </h2>
                             <p className="text-gray-700 text-start font-poppins xl:text-xl xs:text-xs my-4">
-                                There are no hidden prices on Reporite, enter the weight of your
-                                shipment to get an estimated shipping cost
+                                We are an impact-driven financial technology platform that creates financial solutions for a community of individuals and organizations that are committed to long-term growth and financial freedom.
                             </p>
 
                             <div className="my-12">
@@ -58,7 +57,7 @@ function SupportSection() {
                                             <img src={support} alt="" className="lg:w-1/2 md:w-1/2 xs:w-1/2" />
                                         </div>
                                         <div className="flex flex-col justify-evenly">
-                                            <div className="text-2xl font-semibold mb-2 flex items-center ">Online Support</div>
+                                            <div className="text-xl font-semibold mb-1 flex items-center ">We are flexible</div>
 
                                             <div className="mb-2">
                                                 Aliquam porta nisl dolor, olestie pellentesque elit
@@ -70,10 +69,10 @@ function SupportSection() {
 
                                     <div className="flex justify-between ">
                                         <div className="flex mr-5 w-48 h-48  justify-center">
-                                            <img src={drone} alt="" className="lg:w-5/6 md:w-5/6 xs:w-5/6" />
+                                            <img src={drone} alt="" className="lg:w-1/2 md:w-1/2 xs:w-1/2" />
                                         </div>
                                         <div className="flex flex-col justify-evenly">
-                                            <div className="text-2xl font-semibold mb-2 flex items-center ">Fast Delivery</div>
+                                            <div className="text-xl font-semibold mb-2 flex items-center ">We are committed to you</div>
 
                                             <div className="mb-2">
                                                 Aliquam porta nisl dolor, olestie pellentesque elit
@@ -88,7 +87,7 @@ function SupportSection() {
                                             <img src={order} alt="" className="lg:w-1/2 md:w-1/2 xs:w-1/2 " />
                                         </div>
                                         <div className="flex flex-col justify-evenly">
-                                            <div className="text-2xl font-semibold mb-2 flex items-center ">Order Tracking</div>
+                                            <div className="text-xl font-semibold mb-2 flex items-center ">We are transparent</div>
 
                                             <div className="mb-2">
                                                 Aliquam porta nisl dolor, olestie pellentesque elit
@@ -98,10 +97,10 @@ function SupportSection() {
                                     </div>
                                     <div className="flex justify-between ">
                                         <div className="flex mr-5 w-48 h-48  justify-center">
-                                            <img src={costSave} alt="" className="lg:w-5/6 md:w-5/6 xs:w-5/6 " />
+                                            <img src={costSave} alt="" className="lg:w-1/2 md:w-1/2 xs:w-1/2" />
                                         </div>
                                         <div className="flex flex-col justify-evenly">
-                                            <div className="text-2xl font-semibold mb-2 flex items-center ">Cost Save</div>
+                                            <div className="text-xl font-semibold mb-2 flex items-center ">We are here to help</div>
 
                                             <div className="mb-2">
                                                 Aliquam porta nisl dolor, olestie pellentesque elit

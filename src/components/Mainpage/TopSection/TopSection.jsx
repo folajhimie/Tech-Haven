@@ -31,7 +31,7 @@ function TopSection() {
               <div className="flex mx-4 items-center justify-center">
                 <div className="max-w-[1000px] h-full">
                   <div
-                    className="uppercase text-lg lg:my-[190px] sm:my-2 text-center text-md text-gray-500 p-2 text-start w-fit tracking-[.2rem] mb-5"
+                    className="uppercase text-lg lg:my-[80px] sm:my-2 text-center text-md text-gray-500 p-2 text-start w-fit tracking-[.2rem] mb-5"
                     style={{ fontFamily: "san-serif" }}
                   >
                     One small step today, a giant leap for tomorrow.
@@ -78,10 +78,10 @@ function TopSection() {
             </div>
             <Fade left delay={800}>
               <div className="flex items-center justify-center lg:ml-[40px]">
-                <div className="flex mx-4 items-center justify-center">
+                <div className="flex mx-2 items-center justify-center">
                   <div className="max-w-[700px] h-full">
                     <div
-                      className="uppercase text-lg xs:mt-[10px] text-center text-md text-gray-500 p-2 mb-10 text-start w-fit tracking-[.2rem]"
+                      className="uppercase text-lg xs:mt-[3px] text-center text-md text-gray-500 p-2 mb-10 text-start w-fit tracking-[.2rem]"
                       style={{ fontFamily: "san-serif" }}
                     >
                       Put your money to work

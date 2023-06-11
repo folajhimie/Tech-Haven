@@ -14,9 +14,10 @@ import {
   FcInTransit,
 } from "react-icons/fc";
 
+import { AiOutlineBank, AiOutlineUngroup } from "react-icons/ai";
+
 import { HiOutlineChevronUp, HiOutlineChevronDown } from "react-icons/hi";
 
-import { AiOutlineBank, AiOutlineUngroup } from "react-icons/ai";
 
 let useClickOutside = (handler) => {
   let domNode = useRef();
