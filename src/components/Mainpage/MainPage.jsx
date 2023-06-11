@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import ServiceSection from "./ServicePage/ServiceSection";
+// import ServiceSection from "./ServicePage/ServiceSection";
 
 import SupportSection from "./SupportSection/SupportSection";
 
@@ -215,7 +215,7 @@ function MainPage() {
       <div>
         <BackSection />
       </div>
-      
+
       <div>
         <TopSection />
       </div>
@@ -224,9 +224,9 @@ function MainPage() {
       {/* <div>
         <BasicSection />
       </div> */}
-      <div>
+      {/* <div>
         <ServiceSection />
-      </div>
+      </div> */}
 
       <div>
         <SupportSection />

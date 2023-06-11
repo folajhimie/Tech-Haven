@@ -31,7 +31,7 @@ function TopSection() {
               <div className="flex mx-4 items-center justify-center">
                 <div className="max-w-[1000px] h-full">
                   <div
-                    className="uppercase text-lg xs:mt-[100px] text-center text-md text-gray-500 p-2 text-start w-fit tracking-[.2rem] mb-5"
+                    className="uppercase text-lg lg:my-[190px] sm:my-2 text-center text-md text-gray-500 p-2 text-start w-fit tracking-[.2rem] mb-5"
                     style={{ fontFamily: "san-serif" }}
                   >
                     One small step today, a giant leap for tomorrow.
@@ -57,7 +57,7 @@ function TopSection() {
                     your web design goals.
                   </p>
 
-                  <div className="my-6">
+                  <div className="my-12">
                     <div className="w-52">
                       <div className="capitalize text-lg font-semibold text-green-700">
                         Website Design services
@@ -65,14 +65,14 @@ function TopSection() {
                       <div className="w-full bg-green-700 h-[2px]"></div>
                     </div>
                   </div>
-                  <div className="my-10">
+                  {/* <div className="my-10">
                     <div className="w-64">
                       <div className="text-lg font-semibold text-green-700">
                         eCommerce Website Services
                       </div>
                       <div className="w-full bg-green-700 h-[2px]"></div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -81,7 +81,7 @@ function TopSection() {
                 <div className="flex mx-4 items-center justify-center">
                   <div className="max-w-[700px] h-full">
                     <div
-                      className="uppercase text-lg xs:mt-[100px] text-center text-md text-gray-500 p-2 mb-10 text-start w-fit tracking-[.2rem]"
+                      className="uppercase text-lg xs:mt-[10px] text-center text-md text-gray-500 p-2 mb-10 text-start w-fit tracking-[.2rem]"
                       style={{ fontFamily: "san-serif" }}
                     >
                       Put your money to work

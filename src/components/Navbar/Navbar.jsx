@@ -87,7 +87,7 @@ const Navbar = ({ isTopOfPage }) => {
             <div className="flex items-center justify-between w-full">
               <div>
                 <Link to="/" className="">
-                  <div className="text-xl text-primary">Reporite</div>
+                  <div className="text-xl text-primary">Tech Haven</div>
                 </Link>
               </div>
               <button
@@ -151,7 +151,7 @@ const Navbar = ({ isTopOfPage }) => {
             <ul
               className={`
               bg-white fixed h-fit top-[46px] overflow-y-auto bottom-0 py-10 px-4 md:w-[450px] w-full
-              duration-500 ${open ? "left-0" : "left-[-100%]"}
+              duration-500 ${open ? "right-0" : "right-[-100%]"}
               `}
               style={{
                 height: "100%",
@@ -162,25 +162,21 @@ const Navbar = ({ isTopOfPage }) => {
                 overflowX: "hidden",
               }}
             >
+              
               <li>
                 <Link to="/" className="py-4 px-1 inline-block capitalize">
-                  Sell On Reporite
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="py-4 px-1 inline-block capitalize">
-                  Shop On Reporite
+                  Home
                 </Link>
               </li>
               <NavbarLinks OpenScreen={OpenScreen}/>
               <div className="mb-10 py-6 flex justify-center flex-col  sm:w-full">
                 {/* <Button /> */}
-                <button className=" w-full rounded-sm p-2 px-1 text-sm bg-orange-500 text-white">
+                {/* <button className=" w-full rounded-sm p-2 px-1 text-sm bg-lime-500 text-white">
                   Create Account
-                </button>
+                </button> */}
 
-                <button className="my-4 w-full rounded-sm p-2 px-1 text-sm bg-white text-primary border-2">
-                  Sign In
+                <button className="text-gray-600 my-4 w-full rounded-sm p-2 px-1 text-sm bg-lime-600  border-2">
+                  Request Demo
                 </button>
               </div>
             </ul>
