@@ -46,7 +46,7 @@ const Navbar = ({ isTopOfPage }) => {
             <div className="ml-10">
               {/* <img src={Logo} alt="logo" className=" md:cursor-pointer h-7" /> */}
               <Link to="/" className="">
-                <div className="text-xl text-primary">Tech Haven</div>
+                <div className="text-xl text-primary">TECHEVIN</div>
               </Link>
               <div className="text-xl md:hidden" onClick={() => setOpen(!open)}>
                 <ion-icon name={`${open ? "close" : "menu"}`}></ion-icon>
@@ -87,7 +87,7 @@ const Navbar = ({ isTopOfPage }) => {
             <div className="flex items-center justify-between w-full">
               <div>
                 <Link to="/" className="">
-                  <div className="text-xl text-primary">Tech Haven</div>
+                  <div className="text-xl text-primary">TECHEVIN</div>
                 </Link>
               </div>
               <button
