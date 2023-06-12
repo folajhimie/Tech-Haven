@@ -137,7 +137,7 @@ function MainPage() {
                       <div className="h-fit">
                         <TypeAnimation
                           sequence={[
-                            " Big Data",
+                            " Blockchain",
                             2000,
                             " Artificial Intelligence",
                             4000,

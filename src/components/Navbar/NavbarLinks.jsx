@@ -77,7 +77,7 @@ function NavbarLinks({ OpenScreen }) {
                           <AiOutlineVideoCameraAdd />
                         </div>
                         <div className="ml-4 text-start text-base leading-6 font-semibold">
-                          Big DATA
+                          Blockchain
                         </div>
                       </div>
                     </div>
