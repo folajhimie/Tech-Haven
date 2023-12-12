@@ -698,7 +698,7 @@ export const itemData = [
 
 export const links = [
   {
-    name: "Solutions",
+    name: "Customers",
     submenu: true,
     sublinks: [
       {
@@ -755,7 +755,7 @@ export const links = [
     ],
   },
   {
-    name: "Products",
+    name: "Capital",
     submenu: true,
     sublinks: [
       {
@@ -792,7 +792,7 @@ export const links = [
     ],
   },
   {
-    name: "Resources",
+    name: "Company",
     submenu: true,
     sublinks: [
       

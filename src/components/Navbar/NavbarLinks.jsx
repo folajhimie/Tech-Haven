@@ -1,7 +1,9 @@
 import { useState } from "react";
 // import { links } from "./Mylinks";
-import { RiArrowRightSLine } from "react-icons/ri";
-import { Link } from "react-router-dom";
+
+
+// import { RiArrowRightSLine } from "react-icons/ri";
+// import { Link } from "react-router-dom";
 import { HiOutlineChevronUp, HiOutlineChevronDown } from "react-icons/hi";
 
 import { AiOutlineTag, AiOutlineVideoCameraAdd } from "react-icons/ai";
@@ -17,7 +19,7 @@ import {
 import { AiOutlineBank, AiOutlineUngroup } from "react-icons/ai";
 
 // eslint-disable-next-line react/prop-types
-function NavbarLinks({ OpenScreen }) {
+function NavbarLinks() {
   // const [heading, setHeading] = useState("");
   // eslint-disable-next-line no-unused-vars
   const [subHeading, setSubHeading] = useState("");
@@ -26,14 +28,14 @@ function NavbarLinks({ OpenScreen }) {
 
   // eslint-disable-next-line no-unused-vars
   const [linkName, setLinkName] = useState({
-    nameOne: "Solutions",
-    nameTwo: "Products",
-    nameThree: "Resources",
+    nameOne: "Customers",
+    nameTwo: "Capital",
+    nameThree: "Company",
   });
 
   return (
     <>
-      <div className="overflow-x-auto md:w-full sm:w-full">
+      <div className="overflow-x-auto md:w-full sm:w-full text-white">
         <div
           className={`${
             naming === linkName.nameOne ||
@@ -47,7 +49,7 @@ function NavbarLinks({ OpenScreen }) {
           <div>
             <h1
               className={`${
-                naming === linkName.nameOne ? "text-primary" : ""
+                naming === linkName.nameOne ? "text-white" : ""
               } py-4 flex justify-between items-center md:pr-0 pr-5 group`}
               onClick={() => {
                 naming !== linkName.nameOne
@@ -65,14 +67,14 @@ function NavbarLinks({ OpenScreen }) {
                 )}
               </span>
             </h1>
-            <div className=" top-0 left-0 w-full bg-white overflow-x-auto">
-              {naming === "Solutions" && (
+            <div className=" top-0 left-0 w-full bg-white overflow-x-auto text-white">
+              {naming === "Customers" && (
                 <>
                   <div
-                    className={`bg-white w-full left-0  flex flex-col px-1 justify-center py-1`}
+                    className={`bg-white text-black  border-none w-full left-0 flex flex-col px-1 justify-center py-1`}
                   >
                     <div className="py-2 flex flex-col max-w-[30rem]">
-                      <div className="py-2 flex flex-row  justify-start">
+                      <div className="py-2 flex flex-row justify-start">
                         <div className="text-2xl justify-start flex text-purple-600">
                           <AiOutlineVideoCameraAdd />
                         </div>
@@ -121,7 +123,7 @@ function NavbarLinks({ OpenScreen }) {
 
             <h1
               className={`${
-                naming === linkName.nameTwo ? "text-primary" : ""
+                naming === linkName.nameTwo ? "text-white" : ""
               } py-4 flex justify-between items-center md:pr-0 pr-5 group`}
               onClick={() => {
                 naming !== linkName.nameTwo
@@ -140,10 +142,10 @@ function NavbarLinks({ OpenScreen }) {
               </span>
             </h1>
             <div className=" top-0 left-0 w-full bg-white overflow-x-auto">
-              {naming === "Products" && (
+              {naming === "Capital" && (
                 <>
                   <div
-                    className={`bg-white w-full left-0  flex flex-col px-1 justify-center py-1`}
+                    className={`bg-white text-black  w-full left-0  flex flex-col px-1 justify-center py-1`}
                   >
                     <div className="py-2 flex flex-col max-w-[30rem]">
                       <div className="py-2 flex flex-row  justify-start">
@@ -195,7 +197,7 @@ function NavbarLinks({ OpenScreen }) {
 
             <h1
               className={`${
-                naming === linkName.nameThree ? "text-primary" : ""
+                naming === linkName.nameThree ? "text-white" : ""
               } py-4 flex justify-between items-center md:pr-0 pr-5 group`}
               onClick={() => {
                 naming !== linkName.nameThree
@@ -214,10 +216,10 @@ function NavbarLinks({ OpenScreen }) {
               </span>
             </h1>
             <div className=" top-0 left-0 w-full bg-white overflow-x-auto">
-              {naming === "Resources" && (
+              {naming === "Company" && (
                 <>
                   <div
-                    className={`bg-white w-full left-0  flex flex-col px-1 justify-center py-1`}
+                    className={`bg-white text-black w-full left-0  flex flex-col px-1 justify-center py-1 border-none`}
                   >
                     <div className="py-2 flex flex-col max-w-[30rem]">
                       <div className="py-2 flex flex-row  justify-start">

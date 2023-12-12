@@ -59,7 +59,7 @@ const NavLinks = () => {
             {/* {heading} */}
             <h1 className="py-0 flex justify-between items-center md:pr-0 pr-5 group">
               <Link to="/" className="inline-block">
-                Home
+                Industry
               </Link>
             </h1>
           </div>
@@ -112,10 +112,10 @@ const NavLinks = () => {
           </div>
         ))}
         <div className=" absolute top-10 left-0 w-full bg-white">
-          {heading === "Solutions" && (
+          {heading === "Customers" && (
             <>
               <div
-                className={` absolute bg-white  rounded-lg left-40 top-[1.15rem] border-[2px] flex gap-5 px-4 py-1 border-[2px] border-gray-200`}
+                className={` absolute bg-white text-black rounded-lg left-40 top-[1.15rem] border-[2px] flex gap-5 px-4 py-1 border-[2px] border-gray-200`}
               >
                 <div className="flex flex-col">
                   <div className="flex justify-evenly py-5">
@@ -160,10 +160,10 @@ const NavLinks = () => {
               </div>
             </>
           )}
-          {heading === "Products" && (
+          {heading === "Capital" && (
             <>
               <div
-                className={` absolute bg-white rounded-lg left-80 top-[1.15rem] border-[2px] flex gap-5 px-4 py-1 border-[2px] border-gray-200`}
+                className={` absolute bg-white text-black rounded-lg left-80 top-[1.15rem] border-[2px] flex gap-5 px-4 py-1 border-[2px] border-gray-200`}
               >
                 <div className="flex flex-col">
                   <div className="flex justify-between py-5">
@@ -208,10 +208,10 @@ const NavLinks = () => {
               </div>
             </>
           )}
-          {heading === "Resources" && (
+          {heading === "Company" && (
             <>
               <div
-                className={` absolute bg-white rounded-lg left-[31rem] top-[1.15rem] border-[2px] flex gap-5 px-4 py-1 border-[2px] border-gray-200`}
+                className={` absolute bg-white text-black rounded-lg left-[31rem] top-[1.15rem] border-[2px] flex gap-5 px-4 py-1 border-[2px] border-gray-200`}
               >
                 <div className="flex flex-col">
                   <div className="flex justify-between py-3">

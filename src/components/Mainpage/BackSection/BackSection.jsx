@@ -17,7 +17,7 @@ const BackSection = () => {
     return (
         <section id='trading' className="">
             <div className='bg-[#e0f0ff] py-20 lg:px-6 sm:px-0'>
-                <div className="container mx-auto">
+                <div className="container mx-auto justify-center items-center">
                     <div className="grid md:grid-cols-1 xl:grid-cols-2 justify-between">
                     <Fade left delay={1000}>
                         <div className=' max-w-lg flex justify-center items-center flex-col lg:p-10 sm:p-2'>
@@ -29,7 +29,7 @@ const BackSection = () => {
                                 <h3 className='font-semibold text-xl mb-4'>Customer Support</h3>
                                 <p className='text-gray-500 font-poppins'>Premium 24/7 support available to all customers worldwide by phone or email. Dedicated account managers for partners.</p>
                             </div> */}
-                            <div className='font-light text-[#353535] text-[16.5px] leading-[27.2px]'>
+                            <div className='font-light text-slate-700 text-[16.5px] leading-[27.2px]'>
                                 Earn 5%-15% when you save with any of these PiggyVest plans.
                             </div>
 
