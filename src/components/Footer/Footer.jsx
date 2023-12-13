@@ -16,10 +16,10 @@ function Footer() {
                                 <h2 className='text-start font-poppins font-semibold mb-6 text-xl text-slate-500'>Industry</h2>
 
                                 <li className='mb-4 text-start'>
-                                    <span className=' text-white hover:text-primary font-poppins cursor-pointer'>Retail Businesses</span>
+                                    <span className=' text-white font-poppins cursor-pointer'>Retail Businesses</span>
                                 </li>
                                 <li className='mb-4 text-start'>
-                                    <span className='text-white hover:text-primary font-poppins cursor-pointer'>Internet Companies</span>
+                                    <span className='text-white font-poppins cursor-pointer'>Internet Companies</span>
                                 </li>                                
                             </ul>
                         </div>
@@ -28,7 +28,7 @@ function Footer() {
                                 <h2 className='text-start font-poppins font-semibold mb-6 text-xl text-slate-500'>Product</h2>
 
                                 <li className='mb-4 text-start'>
-                                    <span className=' text-white hover:text-primary font-poppins cursor-pointer'>Brass Capital</span>
+                                    <span className=' text-white font-poppins cursor-pointer'>Brass Capital</span>
                                 </li>
                             </ul>
                         </div>
@@ -37,19 +37,19 @@ function Footer() {
                                 <h2 className='text-start font-poppins font-semibold mb-6 text-xl text-slate-500'>About</h2>
 
                                 <li className='mb-4 text-start'>
-                                    <span className=' text-white hover:text-primary font-poppins cursor-pointer'>Customers</span>
+                                    <span className=' text-white font-poppins cursor-pointer'>Customers</span>
                                 </li>
                                 <li className='mb-4 text-start'>
-                                    <span className='text-white hover:text-primary font-poppins cursor-pointer'>Company</span>
+                                    <span className='text-white font-poppins cursor-pointer'>Company</span>
                                 </li>
                                 <li className='mb-4 text-start'>
-                                    <span className='text-white hover:text-primary font-poppins cursor-pointer'>Why Brass</span>
+                                    <span className='text-white font-poppins cursor-pointer'>Why Brass</span>
                                 </li>
                                 <li className='mb-4 text-start'>
-                                    <span className='text-white hover:text-primary font-poppins cursor-pointer'>Press resources</span>
+                                    <span className='text-white font-poppins cursor-pointer'>Press resources</span>
                                 </li>
                                 <li className='mb-4 text-start'>
-                                    <span className='text-white hover:text-primary font-poppins cursor-pointer'>Careers</span>
+                                    <span className='text-white font-poppins cursor-pointer'>Careers</span>
                                 </li>
                                 
                             </ul>
@@ -59,13 +59,13 @@ function Footer() {
                                 <h2 className='text-start font-poppins font-semibold mb-6 text-xl text-slate-500'>Support</h2>
 
                                 <li className='mb-4 text-start'>
-                                    <span className=' text-white hover:text-primary font-poppins cursor-pointer'>Blog</span>
+                                    <span className=' text-white font-poppins cursor-pointer'>Blog</span>
                                 </li>
                                 <li className='mb-4 text-start'>
-                                    <span className='text-white hover:text-primary font-poppins cursor-pointer'>Guides</span>
+                                    <span className='text-white font-poppins cursor-pointer'>Guides</span>
                                 </li>
                                 <li className='mb-4 text-start'>
-                                    <span className='text-white hover:text-primary font-poppins cursor-pointer'>Help</span>
+                                    <span className='text-white font-poppins cursor-pointer'>Help</span>
                                 </li>                                
                             </ul>
                         </div>
@@ -74,13 +74,13 @@ function Footer() {
                                 <h2 className='text-start font-poppins font-semibold mb-6 text-xl text-slate-500'>Legal</h2>
 
                                 <li className='mb-4 text-start'>
-                                    <span className=' text-white hover:text-primary font-poppins cursor-pointer'>Terms of service</span>
+                                    <span className=' text-white font-poppins cursor-pointer'>Terms of service</span>
                                 </li>
                                 <li className='mb-4 text-start'>
-                                    <span className='text-white hover:text-primary font-poppins cursor-pointer'>Privacy Policy</span>
+                                    <span className='text-white font-poppins cursor-pointer'>Privacy Policy</span>
                                 </li>
                                 <li className='mb-4 text-start'>
-                                    <span className='text-white hover:text-primary font-poppins cursor-pointer'>Capital TOS</span>
+                                    <span className='text-white font-poppins cursor-pointer'>Capital TOS</span>
                                 </li>
                             </ul>
                         </div>
@@ -89,13 +89,13 @@ function Footer() {
                                 <h2 className='text-start font-poppins font-semibold mb-6 text-xl text-slate-500'>Follow</h2>
 
                                 <li className='mb-4 text-start'>
-                                    <span className=' text-white hover:text-primary font-poppins cursor-pointer'>LinkedIn</span>
+                                    <span className=' text-white font-poppins cursor-pointer'>LinkedIn</span>
                                 </li>
                                 <li className='mb-4 text-start'>
-                                    <span className='text-white hover:text-primary font-poppins cursor-pointer'>Instagram</span>
+                                    <span className='text-white font-poppins cursor-pointer'>Instagram</span>
                                 </li>
                                 <li className='mb-4 text-start'>
-                                    <span className='text-white hover:text-primary font-poppins cursor-pointer'>YouTube</span>
+                                    <span className='text-white font-poppins cursor-pointer'>YouTube</span>
                                 </li>
                             </ul>
                         </div>
@@ -104,13 +104,13 @@ function Footer() {
                                 <h2 className='text-start font-poppins font-semibold mb-6 text-xl text-slate-500'>Contact</h2>
 
                                 <li className='mb-4 text-start'>
-                                    <span className=' text-white hover:text-primary font-poppins cursor-pointer'>01-700-2000</span>
+                                    <span className=' text-white font-poppins cursor-pointer'>01-700-2000</span>
                                 </li>
                                 <li className='mb-4 text-start'>
-                                    <span className='text-white hover:text-primary font-poppins cursor-pointer'>sales@trybrass.com</span>
+                                    <span className='text-white font-poppins cursor-pointer'>sales@trybrass.com</span>
                                 </li>
                                 <li className='mb-4 text-start'>
-                                    <span className='text-white hover:text-primary font-poppins cursor-pointer'>help@trybrass.com</span>
+                                    <span className='text-white font-poppins cursor-pointer'>help@trybrass.com</span>
                                 </li>
                             </ul>
                         </div>                   

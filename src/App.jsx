@@ -6,6 +6,8 @@ import Spinner from "./components/Spinner/Spinner";
 // const Home = lazy(() => import("./pages/home/Home"));
 const Layout = lazy(() => import("./components/Navbar/Layout.jsx"));
 const MainPage = lazy(() => import("./components/Mainpage/MainPage.jsx"));
+const SignUp = lazy(() => import("./pages/SignUp/SignUp.jsx"));
+const Register = lazy(() => import("./pages/Register/Register.jsx"));
 
 
 
@@ -31,6 +33,14 @@ function App() {
               {/* <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />  */}
             </Route>
+            <Route
+              path="/auth/signup"
+              element={<SignUp/>}
+            />
+            <Route
+              path="/auth/register"
+              element={<Register/>}
+            />
           </Routes>
         </Router>
       </div>

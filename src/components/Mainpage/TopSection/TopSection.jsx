@@ -133,7 +133,7 @@ function TopSection() {
                 <div className="flex mx-2 items-center justify-center">
                   <div className="max-w-[700px] h-full">
                     <div
-                      className="uppercase text-lg xs:mt-[3px] text-center text-md text-gray-500 p-2 mb-10 text-start w-fit tracking-[.2rem]"
+                      className="uppercase text-lg xs:mt-[3px] text-center text-md text-gray-500 p-2 mb-10 w-fit tracking-[.2rem]"
                       style={{ fontFamily: "san-serif" }}
                     >
                       Put your money to work

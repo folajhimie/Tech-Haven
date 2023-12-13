@@ -76,7 +76,7 @@ const NavLinks = () => {
               {/* {heading} */}
               <h1
                 className={`${
-                  heading === link.name ? " text-primary" : ""
+                  heading === link.name ? " text-[#61297f]" : ""
                 } py-0 flex justify-between items-center md:pr-0 pr-5 group`}
                 onClick={() => {
                   heading !== link.name
@@ -115,7 +115,7 @@ const NavLinks = () => {
           {heading === "Customers" && (
             <>
               <div
-                className={` absolute bg-white text-black rounded-lg left-40 top-[1.15rem] border-[2px] flex gap-5 px-4 py-1 border-[2px] border-gray-200`}
+                className={` absolute bg-white text-black rounded-lg left-40 top-[1.15rem] flex gap-5 px-4 py-1 border-[2px] border-gray-200`}
               >
                 <div className="flex flex-col">
                   <div className="flex justify-evenly py-5">
@@ -163,7 +163,7 @@ const NavLinks = () => {
           {heading === "Capital" && (
             <>
               <div
-                className={` absolute bg-white text-black rounded-lg left-80 top-[1.15rem] border-[2px] flex gap-5 px-4 py-1 border-[2px] border-gray-200`}
+                className={` absolute bg-white text-black rounded-lg left-80 top-[1.15rem] flex gap-5 px-4 py-1 border-[2px] border-gray-200`}
               >
                 <div className="flex flex-col">
                   <div className="flex justify-between py-5">
@@ -211,7 +211,7 @@ const NavLinks = () => {
           {heading === "Company" && (
             <>
               <div
-                className={` absolute bg-white text-black rounded-lg left-[31rem] top-[1.15rem] border-[2px] flex gap-5 px-4 py-1 border-[2px] border-gray-200`}
+                className={` absolute bg-white text-black rounded-lg left-[31rem] top-[1.15rem] flex gap-5 px-4 py-1 border-[2px] border-gray-200`}
               >
                 <div className="flex flex-col">
                   <div className="flex justify-between py-3">

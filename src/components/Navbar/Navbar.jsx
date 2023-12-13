@@ -49,11 +49,11 @@ const Navbar = ({ isTopOfPage }) => {
               <Link to="/" className="">
                 <div className="text-xl text-white">
                   <img
-                      src={Home}
-                      alt="Globe"
-                      className="z-10 relative"
-                    />
-                  </div>
+                    src={Home}
+                    alt="Globe"
+                    className="z-10 relative"
+                  />
+                </div>
               </Link>
               <div className="text-xl md:hidden" onClick={() => setOpen(!open)}>
                 <ion-icon name={`${open ? "close" : "menu"}`}></ion-icon>
@@ -65,9 +65,9 @@ const Navbar = ({ isTopOfPage }) => {
 
             </div>
 
-            
+
           </div>
-          
+
           <ul className="md:flex hidden items-center gap-20 font-[Poppins] xl:text-sm lg:text-xs ">
             {/* <li>
               <Link to="/" className=" py-2 px-3 inline-block">
@@ -78,11 +78,11 @@ const Navbar = ({ isTopOfPage }) => {
               <Link to="/" className="cursor font-medium px-8 py-2 text-white sm:text-xs xs:text-[14px] sm:py-3 sm:px-6 lg:text-[0.75rem] xl:text-[0.95rem] lg:w-fit xl:w-fit">
                 Resources
               </Link>
-              
-              <Link to="/" className="cursor bg-amber-500 rounded-md font-medium px-8 py-2 text-white sm:text-xs xs:text-[14px] sm:py-3 sm:px-6 lg:text-[0.75rem] xl:text-[0.95rem] lg:w-fit xl:w-fit">
+
+              <Link to="/auth/signup" className="cursor bg-amber-500 rounded-md font-medium px-8 py-2 text-white sm:text-xs xs:text-[14px] sm:py-3 sm:px-6 lg:text-[0.75rem] xl:text-[0.95rem] lg:w-fit xl:w-fit">
                 Login
               </Link>
-              
+
               <div className="md:block hidden">
                 <Link className="link flex items-center" to="/auth/register">
                   <SecondaryButton text={"Open an account"} />
@@ -101,14 +101,14 @@ const Navbar = ({ isTopOfPage }) => {
             <div className="flex items-center justify-between w-full">
               <div>
                 <Link to="/" className="">
-                <div className="text-xl text-white">
-                  <img
+                  <div className="text-xl text-white">
+                    <img
                       src={Home}
                       alt="Globe"
                       className="z-10 relative"
                     />
                   </div>
-              </Link>
+                </Link>
               </div>
               <button
                 className="text-white text-3xl "
@@ -182,25 +182,36 @@ const Navbar = ({ isTopOfPage }) => {
                 overflowX: "hidden",
               }}
             >
-              
+
               <li>
                 <Link to="/" className="py-4 px-1 inline-block capitalize text-white">
                   Industry
                 </Link>
               </li>
-              <NavbarLinks OpenScreen={OpenScreen}/>
+              <NavbarLinks OpenScreen={OpenScreen} />
               <div className="mb-10 py-6 flex justify-center flex-col  sm:w-full">
-              <Link to="/" className="my-2 text-center cursor font-medium px-8 py-2 text-white sm:text-xs xs:text-[14px] sm:py-3 sm:px-6 lg:text-[0.75rem] xl:text-[0.95rem] lg:w-fit xl:w-fit">
-                Resources
-              </Link>
-              
-              <Link to="/" className="my-2 bg-amber-500 text-center cursor font-medium px-8 py-2 text-white sm:text-xs xs:text-[14px] sm:py-3 sm:px-6 lg:text-[0.75rem] xl:text-[0.95rem] lg:w-fit xl:w-fit">
-                Login
-              </Link>
+                <Link to="/" className="my-2 text-center cursor font-medium px-8 py-2 text-white sm:text-xs xs:text-[14px] sm:py-3 sm:px-6 lg:text-[0.75rem] xl:text-[0.95rem] lg:w-fit xl:w-fit">
+                  Resources
+                </Link>
+
+                <Link to="/auth/signup" className="my-2 bg-amber-500 text-center cursor font-medium px-8 py-2 text-white sm:text-xs xs:text-[14px] sm:py-3 sm:px-6 lg:text-[0.75rem] xl:text-[0.95rem] lg:w-fit xl:w-fit">
+                  Login
+                </Link>
 
                 <button className="text-white my-4 w-full rounded-sm p-2 px-1 text-sm bg-[#61297F] border-none">
                   Open an account
                 </button>
+
+                {/* <div className="my-8 flex justify-center w-full">
+                  <div className="block  font-semibold">
+                    <Link
+                      className="link flex font-semibold"
+                      to="/auth/register"
+                    >
+                      <SecondaryButton text={"Open an Account"} />
+                    </Link>
+                  </div>
+                </div> */}
               </div>
             </ul>
           </div>
