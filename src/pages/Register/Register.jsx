@@ -51,11 +51,11 @@ const Register = () => {
 
                         </div>
                     </div>
-                    <div className="flex bg-[#F4F7FA] md:flex-1 min-h-screen flex-col w-full  justify-center items-center relative z-50">
-                        <div className="flex  items-center justify-center h-screen  w-full">
-                            <div className="w-full flex flex-col p-5 max-w-3xl">
+                    <div className="flex bg-[#F4F7FA] md:flex-1 min-h-screen flex-col w-full justify-center items-center relative z-50">
+                        <div className="flex  items-center justify-center h-screen w-full">
+                            <div className="w-full flex flex-col p-5 max-w-2xl">
                                 <form
-                                    className="border rounded-sm p-7 shadow-lg bg-white  w-full flex-1 mt-4"
+                                    className="border rounded-sm p-7 shadow-lg bg-white w-full flex-1 mt-4"
                                     method="POST"
                                 >
                                     <div className="">
@@ -72,9 +72,17 @@ const Register = () => {
                                                 </Link>
                                             </span>
                                         </div> */}
+                                        
 
                                         <div className="grid md:grid-cols-2 xs:grid-cols-1 gap-10 mb-5 ">
-                                            <div className="flex">
+                                            <div className="block">
+                                                <label
+                                                    htmlFor="text"
+                                                    className="block w-full pb-1 text-sm font-medium text-gray-700 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                                                >
+                                                    First Name: <span className="text-rose-700">*</span>
+                                                    
+                                                </label>
                                                 <input
                                                     type="text"
                                                     name="text"
@@ -84,7 +92,13 @@ const Register = () => {
                                                     required
                                                 />
                                             </div>
-                                            <div className="flex">
+                                            <div className="block">
+                                                <label
+                                                    htmlFor="text"
+                                                    className="block w-full pb-1 text-sm font-medium text-gray-700 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                                                >
+                                                    Last Name: <span className="text-rose-700">*</span>
+                                                </label>
                                                 <input
                                                     type="text"
                                                     name="text"
@@ -97,7 +111,13 @@ const Register = () => {
 
                                         </div>
 
-                                        <div className="flex">
+                                        <div className="block">
+                                            <label
+                                                htmlFor="email"
+                                                className="block w-full pb-1 text-sm font-medium text-gray-700 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                                            >
+                                                Email Address: <span className="text-rose-700">*</span>
+                                            </label>
                                             <input
                                                 type="email"
                                                 name="email"
@@ -112,7 +132,13 @@ const Register = () => {
                                     <div className="mt-5 w-full">
 
                                         <div className="">
-                                            <div className="flex">
+                                            <div className="block">
+                                                <label
+                                                    htmlFor="password"
+                                                    className="block w-full pb-1 text-sm font-medium text-gray-700 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                                                >
+                                                    Password: <span className="text-rose-700">*</span>
+                                                </label>
                                                 <input
                                                     type="password"
                                                     name="password"
@@ -130,7 +156,13 @@ const Register = () => {
                                     <div className="mt-5 w-full">
 
                                         <div className="">
-                                            <div className="flex">
+                                            <div className="block">
+                                                <label
+                                                    htmlFor="password"
+                                                    className="block w-full pb-1 text-sm font-medium text-gray-700 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                                                >
+                                                    Confirm Password: <span className="text-rose-700">*</span>
+                                                </label>
                                                 <input
                                                     type="password"
                                                     name="password"
@@ -150,11 +182,11 @@ const Register = () => {
                                     <div className="flex justify-end w-full mt-8">
 
                                         <div className="flex justify-end">
-                                            <Link to="/">
-                                                <button className="bg-[#61297F] py-2 rounded text-white px-10 text-xs">
+                                                <button className="bg-[#61297F] py-2 rounded text-white px-8 text-xs font-semibold">
                                                     Create Account
                                                 </button>
-                                            </Link>
+                                            {/* <Link to="/">
+                                            </Link> */}
                                         </div>
                                     </div>
                                 </form>
@@ -170,7 +202,7 @@ const Register = () => {
 
                                     <div>
                                         <span className="text-[#191D2391] text-xs ml-2">
-                                            Security & Help
+                                            Privacy | Terms
                                         </span>
                                     </div>
                                 </div>

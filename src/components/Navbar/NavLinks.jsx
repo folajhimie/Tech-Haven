@@ -58,7 +58,7 @@ const NavLinks = () => {
             {/* { link.name} */}
             {/* {heading} */}
             <h1 className="py-0 flex justify-between items-center md:pr-0 pr-5 group">
-              <Link to="/" className="inline-block">
+              <Link to="/auth/verify-account" className="inline-block">
                 Industry
               </Link>
             </h1>

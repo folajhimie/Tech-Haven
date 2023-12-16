@@ -41,7 +41,7 @@ const SignUp = () => {
                     </div>
                     <div className="flex bg-[#F4F7FA] md:flex-1 min-h-screen flex-col w-full  justify-center items-center relative z-50">
                         <div className="flex  items-center justify-center h-screen  w-full">
-                            <div className="w-full flex flex-col p-5 max-w-3xl">
+                            <div className="w-full flex flex-col p-5 max-w-2xl">
                                 <form
                                     className="border rounded-sm p-7 shadow-lg bg-white  w-full flex-1 mt-4"
                                     method="POST"
@@ -61,7 +61,13 @@ const SignUp = () => {
                                             </span>
                                         </div>
 
-                                        <div className="flex">
+                                        <div className="block">
+                                            <label
+                                                    htmlFor="email"
+                                                    className="block w-full pb-1 text-sm font-medium text-gray-700 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                                                >
+                                                    Confirm Password: <span className="text-rose-700">*</span>
+                                            </label>
                                             <input
                                                 type="email"
                                                 name="email"
@@ -76,7 +82,13 @@ const SignUp = () => {
                                     <div className="mt-5 w-full">
 
                                         <div className="">
-                                            <div className="flex">
+                                            <div className="block">
+                                                <label
+                                                    htmlFor="password"
+                                                    className="block w-full pb-1 text-sm font-medium text-gray-700 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
+                                                >
+                                                    Confirm Password: <span className="text-rose-700">*</span>
+                                                </label>
                                                 <input
                                                     type="password"
                                                     name="password"
@@ -104,11 +116,11 @@ const SignUp = () => {
                                     <div className="flex justify-end w-full mt-8">
 
                                         <div className="flex justify-end">
-                                            <Link to="/">
-                                                <button className="bg-[#61297F] py-2 rounded text-white px-10 text-xs">
-                                                    Login
-                                                </button>
-                                            </Link>
+                                            <button className="bg-[#61297F] py-2 rounded text-white px-8 text-xs font-semibold">
+                                                Login
+                                            </button>
+                                            {/* <Link to="/">
+                                            </Link> */}
                                         </div>
                                     </div>
                                 </form>

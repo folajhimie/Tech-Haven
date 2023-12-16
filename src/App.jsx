@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy,useEffect, useState } from "react";
 // import Featured from "./components/Navbar/Featured";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Spinner from "./components/Spinner/Spinner";
@@ -8,43 +8,79 @@ const Layout = lazy(() => import("./components/Navbar/Layout.jsx"));
 const MainPage = lazy(() => import("./components/Mainpage/MainPage.jsx"));
 const SignUp = lazy(() => import("./pages/SignUp/SignUp.jsx"));
 const Register = lazy(() => import("./pages/Register/Register.jsx"));
+const VerifyPage = lazy(() => import("./pages/VerifyAccount/VerifyPage.jsx"));
+const MainDashboard = lazy(() => import("./components/Dashboard/Layout/Layout.jsx"));
+const DefaultBoard = lazy(() => import("./pages/Dashboard/DefaultBoard.jsx"));
 
-
-
-// const Contact = lazy(() => import("./pages/Contact/Contact"));
-// const AuthLogin = lazy(() => import("./components/Login/AuthLogin"));
-// const AuthRegister = lazy(() => import("./components/Login/AuthRegister"));
+import routes from "./routes/index.jsx"
 
 function App() {
-  return (
-    <Suspense
-      fallback={
-        <div className="w-full h-[100vh] flex justify-center items-center">
-          <Spinner />
-        </div>
-      }
-    >
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 1000);
+  }, []);
+
+
+  return loading ? (
+    <div className="w-full h-[100vh] flex justify-center items-center">
+      <Spinner />
+    </div>
+  ) : (
+    <>
       <div>
         <Router>
           <Routes>
             <Route path="/" element={<Layout />}>
-
               <Route path="/" element={<MainPage />} />
-              {/* <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />  */}
             </Route>
+            
             <Route
               path="/auth/signup"
-              element={<SignUp/>}
+              element={<SignUp />}
             />
             <Route
               path="/auth/register"
-              element={<Register/>}
+              element={<Register />}
             />
+            <Route
+              path="/auth/verify-account"
+              element={<VerifyPage />}
+            />
+
+            {/* <Route path="/admin/" element={<MainDashboard />}>
+              <Route path="dashboard" element={<DefaultBoard />}/>
+            </Route> */}
+          </Routes>
+          <Routes>
+            <Route path="/admin/" element={<MainDashboard />}>
+              <Route path="dashboard" element={<DefaultBoard />} />
+              {routes.map((routes, index) => {
+                const { path, Component } = routes;
+                return (
+                  <Route
+                    key={index}
+                    path={path}
+                    element={
+                      <Suspense 
+                        fallback={
+                          <div className="w-full h-[100vh] flex justify-center items-center">
+                            <Spinner />
+                          </div>
+                        }
+                      >
+                        <Component />
+                      </Suspense>
+                    }
+                  />
+                );
+              })}
+            </Route>
           </Routes>
         </Router>
       </div>
-    </Suspense>
+      
+    </>
   );
 }
 

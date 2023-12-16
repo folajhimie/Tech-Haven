@@ -10,28 +10,199 @@
 } */
 
 .type-cursor {
-    font-size: auto;
-    width: 20px;
-    height: 20px;
-    height: fit-content;
-    /* background-color: yellow; */
-    font-family: cursive;
-    color: black;
-    animation: blink 1s linear infinite;
+  font-size: auto;
+  width: 20px;
+  height: 20px;
+  height: fit-content;
+  /* background-color: yellow; */
+  font-family: cursive;
+  color: black;
+  animation: blink 1s linear infinite;
 }
 
 @keyframes blink {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    50% {
-        opacity: .5;
-    }
+  50% {
+    opacity: 0.5;
+  }
 
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
+}
+
+.date-picker-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  /* background: deeppink; */
+  width: 100px;
+}
+
+.react-datepicker__triangle {
+  display: none;
+  width: 96rem;
+  /* background: aquamarine; */
+}
+
+.react-datepicker__day.react-datepicker__day--keyboard-selected {
+  border: none;
+  border-radius: 7px;
+  background-color: #b8c3d2;
+  color: #61297f;
+}
+
+.react-datepicker__day.react-datepicker__day--keyboard-selected:hover {
+  border: none;
+  border-radius: 7px;
+  background-color: #b8c3d2;
+  /* color: deeppink; */
+}
+
+.react-datepicker-popper .react-datepicker__navigation {
+  padding-top: 12px;
+  color: #000;
+  /* background: lawngreen; */
+}
+
+.react-datepicker {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.189);
+  border: none !important;
+  font-family: "Inter" !important;
+  width: fit-content;
+  /* background-color: aqua; */
+}
+
+.react-datepicker__header {
+  border-bottom: solid 2px #61297f !important;
+  background: white !important;
+  /* background: yellow; */
+  font-size: 10px;
+}
+
+.react-datepicker__current-month {
+  color: #61297f !important;
+  font-size: 10px;
+  /* background: lightcoral; */
+  /* width: fit-content; */
+}
+
+.react-datepicker__day.react-datepicker__day--today {
+  border-radius: 7px;
+  border: solid 2px #61297f !important;
+  /* background-color: white !important; */
+  color: black !important;
+  /* width: 30px;
+    height: 30px; */
+  /* font-size: 50px; */
+}
+
+.react-datepicker__day.react-datepicker__day--selected {
+  border: none;
+  border-radius: 7px;
+  background-color: #61297f;
+  color: white;
+  /* font-size: 50px; */
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker__time-name {
+  color: #000;
+  display: inline-block;
+  width: 1.5rem;
+  line-height: 1.2rem;
+  text-align: center;
+  font-size: 0.6rem;
+  margin: 0rem;
+}
+
+@media only screen and (max-width: 640px) {
+  .react-datepicker__day-name,
+  .react-datepicker__day,
+  .react-datepicker__time-name {
+    color: #000;
+    display: inline-block;
+    width: 1.2rem;
+    line-height: 1.1rem;
+    text-align: center;
+    font-size: 0.5rem;
+    margin: 0rem;
+  }
+}
+input[type="file"]::before {
+  content: none;
+}
+
+.react-datepicker__day--selected:hover,
+.react-datepicker__day--in-selecting-range:hover,
+.react-datepicker__day--in-range:hover,
+.react-datepicker__month-text--selected:hover,
+.react-datepicker__month-text--in-selecting-range:hover,
+.react-datepicker__month-text--in-range:hover,
+.react-datepicker__quarter-text--selected:hover,
+.react-datepicker__quarter-text--in-selecting-range:hover,
+.react-datepicker__quarter-text--in-range:hover,
+.react-datepicker__year-text--selected:hover,
+.react-datepicker__year-text--in-selecting-range:hover,
+.react-datepicker__year-text--in-range:hover {
+  border: none;
+  border-radius: 7px !important;
+  background-color: var(--brand) !important;
+  color: var(--dark) !important;
+}
+
+input[type="file"] {
+  position: relative;
+  /* border: 1px solid gray; */
+  font-size: initial;
+  outline: none;
+  color: black;
+}
+
+input[type="file"]::file-selector-button {
+    display: none;
+    color: black;
+}
+
+/* Faked label styles and icon */
+/* input[type="file"]::before {
+    display: none;
+} */
+input[type="file"]::before {
+    content: "" !important;
+    color: black;
+}
+
+
+input[type="file"]::after {
+  
+  display: none;
+  
+  content: "";
+}
+
+/* ------- From Step 1 ------- */
+
+/* file upload button */
+input[type="file"]::file-selector-button {
+  /* border-radius: 4px; */
+  color: red;
+  display: none;
+}
+
+/* file upload button hover state */
+input[type="file"]::file-selector-button:hover {
+  background-color: #f3f4f6;
+  display: none;
+}
+
+/* file upload button active state */
+input[type="file"]::file-selector-button:active {
+  background-color: #e5e7eb;
+  display: none;
 }
 
 @tailwind base;

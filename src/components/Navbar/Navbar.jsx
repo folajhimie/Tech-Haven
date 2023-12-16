@@ -75,7 +75,7 @@ const Navbar = ({ isTopOfPage }) => {
               </Link>
             </li> */}
             <div className="flex w-auto justify-between gap-2">
-              <Link to="/" className="cursor font-medium px-8 py-2 text-white sm:text-xs xs:text-[14px] sm:py-3 sm:px-6 lg:text-[0.75rem] xl:text-[0.95rem] lg:w-fit xl:w-fit">
+              <Link to="/admin/dashboard" className="cursor font-medium px-8 py-2 text-white sm:text-xs xs:text-[14px] sm:py-3 sm:px-6 lg:text-[0.75rem] xl:text-[0.95rem] lg:w-fit xl:w-fit">
                 Resources
               </Link>
 
@@ -184,13 +184,13 @@ const Navbar = ({ isTopOfPage }) => {
             >
 
               <li>
-                <Link to="/" className="py-4 px-1 inline-block capitalize text-white">
+                <Link to="/auth/verify-account" className="py-4 px-1 inline-block capitalize text-white">
                   Industry
                 </Link>
               </li>
               <NavbarLinks OpenScreen={OpenScreen} />
               <div className="mb-10 py-6 flex justify-center flex-col  sm:w-full">
-                <Link to="/" className="my-2 text-center cursor font-medium px-8 py-2 text-white sm:text-xs xs:text-[14px] sm:py-3 sm:px-6 lg:text-[0.75rem] xl:text-[0.95rem] lg:w-fit xl:w-fit">
+                <Link to="/admin/dashboard" className="my-2 text-center cursor font-medium px-8 py-2 text-white sm:text-xs xs:text-[14px] sm:py-3 sm:px-6 lg:text-[0.75rem] xl:text-[0.95rem] lg:w-fit xl:w-fit">
                   Resources
                 </Link>
 
