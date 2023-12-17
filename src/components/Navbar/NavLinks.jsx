@@ -133,7 +133,7 @@ const NavLinks = () => {
                         <AiOutlineTag />
                       </div>
                       <div className="ml-4 text-start text-base leading-6 font-semibold">
-                        <div>Machine Learning</div>
+                        <div>Wallets</div>
                       </div>
                     </div>
                   </div>
@@ -143,7 +143,7 @@ const NavLinks = () => {
                         <AiOutlineUngroup />
                       </div>
                       <div className="ml-4 text-start text-base leading-6 font-semibold">
-                        Big Analytics
+                        Exchanges
                       </div>
                     </div>
 
@@ -152,7 +152,7 @@ const NavLinks = () => {
                         <AiOutlineBank />
                       </div>
                       <div className="ml-4 text-start text-base leading-6 font-semibold">
-                        <div>Artificial Intelligence</div>
+                        <div>Bitcoin</div>
                       </div>
                     </div>
                   </div>
@@ -172,7 +172,7 @@ const NavLinks = () => {
                         <FcPuzzle />
                       </div>
                       <div className="ml-4 text-start text-base leading-6 font-semibold">
-                        Swift Ticket
+                      Cryptocurrencies
                       </div>
                     </div>
 
@@ -181,7 +181,7 @@ const NavLinks = () => {
                         <FcRegisteredTrademark />
                       </div>
                       <div className="ml-4 text-start text-base leading-6 font-semibold">
-                        <div>Ferry Transport</div>
+                        <div>Trading Pairs</div>
                       </div>
                     </div>
                   </div>
@@ -191,7 +191,8 @@ const NavLinks = () => {
                         <FcUnlock />
                       </div>
                       <div className="ml-4 text-start text-base leading-6 font-semibold">
-                        Personal Rides
+                        Exchange Options
+
                       </div>
                     </div>
 
@@ -200,7 +201,7 @@ const NavLinks = () => {
                         <FcInTransit />
                       </div>
                       <div className="ml-4 text-start text-base leading-6 font-semibold">
-                        <div>Bus Transport</div>
+                        <div>Market analysis</div>
                       </div>
                     </div>
                   </div>

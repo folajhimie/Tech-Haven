@@ -90,7 +90,7 @@ function NavbarLinks() {
                           <AiOutlineTag />
                         </div>
                         <div className="ml-4 text-start text-base leading-6 font-semibold">
-                          Machine Learning
+                          Wallets
                         </div>
                       </div>
                     </div>
@@ -101,7 +101,7 @@ function NavbarLinks() {
                           <AiOutlineUngroup />
                         </div>
                         <div className="ml-4 text-start text-base leading-6 font-semibold">
-                          Big Analytics
+                          Exchanges
                         </div>
                       </div>
                     </div>
@@ -112,7 +112,7 @@ function NavbarLinks() {
                           <AiOutlineBank />
                         </div>
                         <div className="ml-4 text-start text-base leading-6 font-semibold">
-                          Artificial Intelligence
+                          Bitcoin
                         </div>
                       </div>
                     </div>
@@ -153,7 +153,7 @@ function NavbarLinks() {
                           <FcPuzzle />
                         </div>
                         <div className="ml-4 text-start text-base leading-6 font-semibold">
-                          Swift Ticket
+                        Cryptocurrencies
                         </div>
                       </div>
                     </div>
@@ -164,7 +164,7 @@ function NavbarLinks() {
                           <FcRegisteredTrademark />
                         </div>
                         <div className="ml-4 text-start text-base leading-6 font-semibold">
-                          Ferry Transport
+                          Trading Pairs
                         </div>
                       </div>
                     </div>
@@ -175,7 +175,7 @@ function NavbarLinks() {
                           <FcUnlock />
                         </div>
                         <div className="ml-4 text-start text-base leading-6 font-semibold">
-                          Personal Rides
+                          Exchanges Options
                         </div>
                       </div>
                     </div>
@@ -186,7 +186,7 @@ function NavbarLinks() {
                           <FcInTransit />
                         </div>
                         <div className="ml-4 text-start text-base leading-6 font-semibold">
-                          Bus Transport
+                        Market analysis
                         </div>
                       </div>
                     </div>
