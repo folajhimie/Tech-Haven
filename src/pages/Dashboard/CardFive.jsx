@@ -16,15 +16,12 @@ function CardFive() {
                     {/* <div className="text-slate-900">$100</div> */}
                 </div>
             </div>
-
-
             <div className="h-full flex flex-col text-end">
                 
                 <div className="flex flex-col w-full">
                 <div className="font-medium text-slate-900 mr-1 mt-2 text-2xl">0</div>
                 </div>
             </div>
-            
         </div>
     );
 }
