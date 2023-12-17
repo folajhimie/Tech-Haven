@@ -35,7 +35,7 @@ import Bitcoin from "../../../assets/Dashboard/Bitcoin.svg";
 
 // import { HiOutlineChevronRight, HiOutlineChevronDown } from "react-icons/hi";
 
-const SideNav = ({ OpenScreen, open }) => {
+const SideNav = ({ OpenScreen, open}) => {
     // const [heading, setHeading] = useState("Business Overview");
     // const isAboveMediumScreens = useMediaQuery("(min-width: 1024px)");
     const location = useLocation();

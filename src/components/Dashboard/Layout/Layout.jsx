@@ -2,14 +2,14 @@
 import { useState } from "react";
 // import Appheader from "./Appheader";
 import SideNav from "./SideNav";
-import useMediaQuery from "../../../hooks/useMediaQuery";
+// import useMediaQuery from "../../../hooks/useMediaQuery";
 import { Outlet } from "react-router-dom";
 import FullHeader from "./FullHeader";
 // import MainPage from "../../../pages/dashboard/MainPage.jsx";
 
 const Layout = () => {
   const [open, setOpen] = useState(false);
-  const isAboveMediumScreens = useMediaQuery("(min-width: 1024px)");
+  // const isAboveMediumScreens = useMediaQuery("(min-width: 1024px)");
 
   const OpenScreen = () => {
     setOpen(!open);
