@@ -1,3 +1,6 @@
+
+
+
 const CardOne = () => {
   return (
     <div className="grid items-center md:grid-cols-5 xs:grid-cols-1 gap-3 flex-row w-full">
