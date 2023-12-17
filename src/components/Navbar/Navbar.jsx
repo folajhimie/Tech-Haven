@@ -198,9 +198,10 @@ const Navbar = ({ isTopOfPage }) => {
                   Login
                 </Link>
 
-                <button className="text-white my-4 w-full rounded-sm p-2 px-1 text-sm bg-[#61297F] border-none">
+                <Link to="/auth/register" className="text-white my-4 w-full rounded-sm p-2 px-1 text-sm bg-[#61297F] border-none text-center">
+
                   Open an account
-                </button>
+                </Link>
 
                 {/* <div className="my-8 flex justify-center w-full">
                   <div className="block  font-semibold">

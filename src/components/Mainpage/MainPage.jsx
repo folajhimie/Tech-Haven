@@ -178,7 +178,7 @@ function MainPage() {
                       className="pl-[10px] relative z-10 inline-block"
                     >
                       <Link
-                        to="/"
+                        to="/auth/register"
                         style={{ boxShadow: "-7px 7px 0 0 #000" }}
                         className="rounded-md flex justify-center items-center bg-[#61297F] py-[10px] px-[36px] w-full h-full border-[1px] border-slate-700"
                       >

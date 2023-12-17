@@ -87,7 +87,7 @@ const DropdownUser = () => {
           <li>
             <Link
               to="/profile"
-              className="pt-3 flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
+              className="pt-3 flex items-center gap-3 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
             >
               <svg
                 className="fill-current"
