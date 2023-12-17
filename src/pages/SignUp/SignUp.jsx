@@ -1,9 +1,33 @@
-// import React, { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 // import iphone from '../../assets/pictures/iPhone_12.png';
 // import all from '../../assets/svg/all.svg';
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const SignUp = () => {
+    const [user, setUser] = useState({
+        email:'', password: ''
+    })
+
+    const onChangeInput = e =>{
+        const {name, value} = e.target;
+        setUser({...user, [name]:value})
+    }
+
+    const loginSubmit = async e =>{
+        e.preventDefault()
+        try {
+            console.log("access mode for active..", user);
+            await axios.post('/user/login', {...user})
+
+            // localStorage.setItem('firstLogin', true)
+            console.log("all the user login..", user);
+            
+            window.location.href = "/admin/dashboard";
+        } catch (err) {
+            alert(err.response.data.msg)
+        }
+    }
 
     return (
         <section className="">
@@ -45,6 +69,7 @@ const SignUp = () => {
                                 <form
                                     className="border rounded-sm p-7 shadow-lg bg-white  w-full flex-1 mt-4"
                                     method="POST"
+                                    onSubmit={loginSubmit}
                                 >
                                     <div className="">
                                         <div className="flex justify-end items-center xs:flex-col md:flex-row mb-6">
@@ -66,12 +91,14 @@ const SignUp = () => {
                                                     htmlFor="email"
                                                     className="block w-full pb-1 text-sm font-medium text-gray-700 transition-all duration-200 ease-in-out group-focus-within:text-blue-400"
                                                 >
-                                                    Confirm Password: <span className="text-rose-700">*</span>
+                                                    Email Address: <span className="text-rose-700">*</span>
                                             </label>
                                             <input
                                                 type="email"
                                                 name="email"
                                                 id="email"
+                                                value={user.email} 
+                                                onChange={onChangeInput}
                                                 className="w-full pl-3 pr-3 py-3 border rounded-sm border-gray-200 outline-none focus:border-[#61297F] text-sm"
                                                 placeholder="Email Address"
                                                 required
@@ -93,6 +120,8 @@ const SignUp = () => {
                                                     type="password"
                                                     name="password"
                                                     id="password"
+                                                    value={user.password} 
+                                                    onChange={onChangeInput}
                                                     placeholder="Password"
                                                     className="w-full pl-3 pr-3 py-3 rounded-sm border border-gray-200 outline-none focus:border-[#61297F] text-sm"
                                                     autoComplete="off"
