@@ -35,7 +35,7 @@ import Bitcoin from "../../../assets/Dashboard/Bitcoin.svg";
 
 // import { HiOutlineChevronRight, HiOutlineChevronDown } from "react-icons/hi";
 
-const SideNav = ({ OpenScreen, open}) => {
+const SideNav = ({ sidebarOpen, setSidebarOpen }) => {
     // const [heading, setHeading] = useState("Business Overview");
     // const isAboveMediumScreens = useMediaQuery("(min-width: 1024px)");
     const location = useLocation();
@@ -94,6 +94,8 @@ const SideNav = ({ OpenScreen, open}) => {
 
     useEffect(() => {
         const clickHandler = ({ target }) => {
+            // console.log("all the money in the building...", open);
+
             if (!sidebar.current || !trigger.current) return;
             if (
                 !open ||
@@ -101,7 +103,7 @@ const SideNav = ({ OpenScreen, open}) => {
                 trigger.current.contains(target)
             )
                 return;
-            OpenScreen(false);
+                setSidebarOpen(false);
         };
         document.addEventListener('click', clickHandler);
         return () => document.removeEventListener('click', clickHandler);
@@ -110,8 +112,9 @@ const SideNav = ({ OpenScreen, open}) => {
     // close if the esc key is pressed
     useEffect(() => {
         const keyHandler = ({ keyCode }) => {
+            console.log("all the value..", open);
             if (!open || keyCode !== 27) return;
-            OpenScreen(false);
+            setSidebarOpen(false);
         };
         document.addEventListener('keydown', keyHandler);
         return () => document.removeEventListener('keydown', keyHandler);
@@ -128,14 +131,9 @@ const SideNav = ({ OpenScreen, open}) => {
 
     return (
         <div className="">
-            {/* className={`absolute left-0 top-0 z-9999 flex h-screen w-52 flex-col overflow-y-hidden bg-white duration-300 ease-linear border-r-[1px] border-gray-200  lg:static lg:translate-x-0 
-                        `} */}
-           
-
-
             <div
                 ref={sidebar}
-                className={`absolute left-0 top-0 z-9999 flex h-screen w-52 flex-col overflow-y-hidden bg-white duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 border-r-[1px] border-gray-200  ${open ? 'translate-x-0' : '-translate-x-full'
+                className={`absolute left-0 top-0 z-50 flex h-screen w-52 flex-col overflow-y-hidden bg-white duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 border-r-[1px] border-gray-200  ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
                     }`}
             >
                 {/* <!-- SIDEBAR HEADER --> */}
@@ -163,9 +161,9 @@ const SideNav = ({ OpenScreen, open}) => {
 
                     <button
                         ref={trigger}
-                        onClick={() => OpenScreen(!open)}
+                        onClick={() => setSidebarOpen(!sidebarOpen)}
                         aria-controls="sidebar"
-                        aria-expanded={open}
+                        aria-expanded={sidebarOpen}
                         className="block lg:hidden"
                     >
                         <svg

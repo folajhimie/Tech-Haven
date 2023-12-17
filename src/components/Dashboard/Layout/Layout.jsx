@@ -8,26 +8,36 @@ import FullHeader from "./FullHeader";
 // import MainPage from "../../../pages/dashboard/MainPage.jsx";
 
 const Layout = () => {
-  const [open, setOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   // const isAboveMediumScreens = useMediaQuery("(min-width: 1024px)");
 
-  const OpenScreen = () => {
-    setOpen(!open);
-    console.log("open screen...", open);
-  };
+  // const OpenScreen = () => {
+  //   setOpen(!open);
+  //   console.log("open screen...", open);
+  // };
+
+  // const handleOpenChange = () => {
+  //   setOpen(!open);
+  //   console.log("object in the plan...", open);
+  // };
+
+  // const handleOpen = () => {
+  //   console.log("object ...", open);
+  //   setOpen(!open);
+  // };
 
   return (
-    <div className="dark:bg-boxdark-2 dark:text-bodydark">
+    <div className="">
       {/* <!-- ===== Page Wrapper Start ===== --> */}
       <div className="flex h-screen overflow-hidden">
         {/* <!-- ===== Sidebar Start ===== --> */}
-        <SideNav OpenScreen={OpenScreen} open={open} />
+        <SideNav sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
         {/* <!-- ===== Sidebar End ===== --> */}
 
         {/* <!-- ===== Content Area Start ===== --> */}
         <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
           {/* <!-- ===== Header Start ===== --> */}
-          <FullHeader OpenScreen={OpenScreen} open={open} />
+          <FullHeader sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
           {/* <!-- ===== Header End ===== --> */}
 
           {/* <!-- ===== Main Content Start ===== --> */}
