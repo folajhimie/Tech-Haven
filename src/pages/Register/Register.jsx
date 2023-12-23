@@ -49,7 +49,7 @@ const Register = () => {
         e.preventDefault()
         console.log("user code..", user);
         try {
-            const response = await axios.post('http://localhost:5151/api/register',
+            const response = await axios.post('https://yousha-demo.onrender.com/api/register',
                 { ...user },
                 {
                     headers: {
