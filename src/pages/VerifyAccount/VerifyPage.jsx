@@ -14,56 +14,79 @@ import "react-datepicker/dist/react-datepicker.css";
 const VerifyPage = () => {
     const [startDate, setStartDate] = useState(new Date());
     const [currentFormKey, setCurrentFormKey] = useState(0);
-    const [image1, setImage1] = useState(null);
-    const [image2, setImage2] = useState(null);
-    const [image3, setImage3] = useState(null);
-
-    const [user, setUser] = useState({
-        accountNumber: "",
-        address: "",
-        socialSecurityNumber: "",
-        taxNumber: "",
-        employerNumber: "",
+    
+    const [accountData, setAccountData] = useState({
+        accountNumber: '',
+        address: '',
+        socialSecurityNumber: '',
+        dateOfBirth: startDate,
+        taxNumber: '',
+        employerNumber: '',
+        frontId: null,
+        backId: null,
+        selfieId: null,
+        applicantId: null,
     });
+
+    const handleFileChange = (event, field) => {
+        const file = event.target.files[0];
+        setAccountData({
+            ...accountData,
+            [field]: file,
+        });
+    };
+
+    const handleInputChange = (event, field) => {
+        setAccountData({
+            ...accountData,
+            [field]: event.target.value,
+        });
+    };
+
+    const onChangeInput = e => {
+        const { name, value } = e.target;
+        setAccountData({...accountData, [name]: value })
+    }
+    
+
+
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+
+        console.log("all the account ...", accountData);
+    
+        const formData = new FormData();
+        formData.append('accountNumber', accountData.accountNumber);
+        formData.append('address', accountData.address);
+        formData.append('socialSecurityNumber', accountData.socialSecurityNumber);
+        formData.append('dateOfBirth', startDate);
+        formData.append('taxNumber', accountData.taxNumber);
+        formData.append('employerNumber', accountData.employerNumber);
+        formData.append('frontId', accountData.frontId);
+        formData.append('backId', accountData.backId);
+        formData.append('selfieId', accountData.selfieId);
+        formData.append('applicantId', accountData.applicantId);
+    
+        
+        try {
+            const response = await axios.post('http://localhost:5151/api/accounts', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+            console.log("account in the code...", response.data, "item data...", response); // Handle the API response data here
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
+    
 
     const [formSteps] = useState([
         { name: "User Registration", index: 0 },
         { name: "Choose Business", index: 1 },
         { name: "Business Details", index: 2 },
     ]);
-
-    const onChangeInput = e => {
-        const { name, value } = e.target;
-        setUser({ ...user, [name]: value })
-    }
-
-    const handleFormSubmit = async (e) => {
-        const formData = new FormData();
-        formData.append('image1', image1);
-        formData.append('image2', image2);
-        formData.append('image3', image3);
-        e.preventDefault();
-
-        // formData.append('text1', user.accountNumber);
-        // formData.append('text2', text2);
-        // const textData = {
-        //     text1: text1,
-        //     text2: text2
-        // };
-
-        formData.append('user', JSON.stringify(user));
-
-        try {
-            const response = await axios.post('https://youshawebapi.onrender.com/api/File/upload', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            });
-            console.log(response.data); // Handle the API response data here
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    }
 
     const renderNextButtonForm = () => {
         setCurrentFormKey(currentFormKey + 1);
@@ -145,7 +168,7 @@ const VerifyPage = () => {
                                                     type="text"
                                                     name="accountNumber"
                                                     id="accountNumber"
-                                                    value={user.accountNumber}
+                                                    value={accountData.accountNumber}
                                                     onChange={onChangeInput}
                                                     className="w-full pl-3 pr-3 py-3 border rounded-sm border-gray-200 outline-none focus:border-[#61297F] text-sm"
                                                     placeholder="Card or Account Number"
@@ -191,7 +214,7 @@ const VerifyPage = () => {
                                                             type="text"
                                                             name="address"
                                                             id="address"
-                                                            value={user.address}
+                                                            value={accountData.address}
                                                             onChange={onChangeInput}
                                                             className="w-full pl-3 pr-3 py-3 border rounded-sm border-gray-200 outline-none focus:border-[#61297F] text-sm"
                                                             placeholder="Physical U.S. Address"
@@ -310,7 +333,7 @@ const VerifyPage = () => {
                                                     type="text"
                                                     name="socialSecurityNumber"
                                                     id="socialSecurityNumber"
-                                                    value={user.socialSecurityNumber}
+                                                    value={accountData.socialSecurityNumber}
                                                     onChange={onChangeInput}
                                                     className="w-full pl-3 pr-3 py-3 border rounded-sm border-gray-200 outline-none focus:border-[#61297F] text-sm"
                                                     placeholder="Social Security Number (SSN)*"
@@ -333,7 +356,7 @@ const VerifyPage = () => {
                                                     type="text"
                                                     name="taxNumber"
                                                     id="taxNumber"
-                                                    value={user.taxNumber}
+                                                    value={accountData.taxNumber}
                                                     onChange={onChangeInput}
                                                     className="w-full pl-3 pr-3 py-3 border rounded-sm border-gray-200 outline-none focus:border-[#61297F] text-sm"
                                                     placeholder="Individual Taxpayer Identification Number (ITIN)"
@@ -354,7 +377,7 @@ const VerifyPage = () => {
                                                     type="text"
                                                     name="employerNumber"
                                                     id="employerNumber"
-                                                    value={user.employerNumber}
+                                                    value={accountData.employerNumber}
                                                     onChange={onChangeInput}
                                                     className="w-full pl-3 pr-3 py-3 border rounded-sm border-gray-200 outline-none focus:border-[#61297F] text-sm"
                                                     placeholder="Employer Identification Number (EIN)"
@@ -480,7 +503,7 @@ const VerifyPage = () => {
                                                     name="avatar"
                                                     id="file-input"
                                                     accept=".jpg,.jpeg,.png"
-                                                    onChange={(e) => setImage1(e.target.files[0])}
+                                                    onChange={(e) => handleFileChange(e, 'frontId')}
                                                     className="w-full pl-3 pr-3 py-3 border rounded-sm border-gray-200 outline-none focus:border-[#61297F] text-sm"
                                                     placeholder="Valid government-issued photo ID"
                                                     required
@@ -489,13 +512,10 @@ const VerifyPage = () => {
                                                     className="flex mt-3 flex-col h-6 "
                                                     style={{
                                                         position: "absolute",
-
                                                         right: "0px",
                                                         bottom: "12px",
                                                         lineHeight: "20px",
                                                     }}
-
-
                                                 >
 
                                                     <div className="cursor-pointer">
@@ -541,7 +561,7 @@ const VerifyPage = () => {
                                                     name="avatar"
                                                     id="file-input"
                                                     accept=".jpg,.jpeg,.png"
-                                                    onChange={(e) => setImage2(e.target.files[0])}
+                                                    onChange={(e) => handleFileChange(e, 'backId')}
                                                     className="w-full pl-3 pr-3 py-3 border rounded-sm border-gray-200 outline-none focus:border-[#61297F] text-sm"
                                                     placeholder="Valid government-issued photo ID"
                                                     required
@@ -585,11 +605,7 @@ const VerifyPage = () => {
                                                     name="avatar"
                                                     id="file-input"
                                                     accept=".jpg,.jpeg,.png"
-                                                    onChange={(e) => setImage3(e.target.files[0])}
-
-                                                    // className="sr-only"
-
-
+                                                    onChange={(e) => handleFileChange(e, 'selfieId')}
                                                     className="w-full pl-3 pr-3 py-3 border rounded-sm border-gray-200 outline-none focus:border-[#61297F] text-sm"
                                                     placeholder="Valid government-issued photo ID"
                                                     required
@@ -598,13 +614,10 @@ const VerifyPage = () => {
                                                     className="flex mt-3 flex-col h-6 "
                                                     style={{
                                                         position: "absolute",
-
                                                         right: "0px",
                                                         bottom: "12px",
                                                         lineHeight: "20px",
                                                     }}
-
-
                                                 >
 
                                                     <div className="cursor-pointer">
@@ -638,10 +651,7 @@ const VerifyPage = () => {
                                                     name="avatar"
                                                     id="file-input"
                                                     accept=".jpg,.jpeg,.png"
-
-                                                    // className="sr-only"
-
-
+                                                    onChange={(e) => handleFileChange(e, 'applicantId')}
                                                     className="w-full pl-3 pr-3 py-3 border rounded-sm border-gray-200 outline-none focus:border-[#61297F] text-sm"
                                                     placeholder="Valid government-issued photo ID"
                                                     required
@@ -650,17 +660,12 @@ const VerifyPage = () => {
                                                     className="flex mt-3 flex-col h-6 "
                                                     style={{
                                                         position: "absolute",
-
                                                         right: "0px",
                                                         bottom: "12px",
                                                         lineHeight: "20px",
                                                     }}
-
-
                                                 >
-
                                                     <div className="cursor-pointer">
-
                                                         <div className="w-full flex py-10 md:px-0 lg:px-5 xs:px-0 xs:py-0 justify-center items-center ">
                                                             <img
                                                                 src={Download}

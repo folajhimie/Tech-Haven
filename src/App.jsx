@@ -2,6 +2,7 @@ import { Suspense, lazy,useEffect, useState } from "react";
 // import Featured from "./components/Navbar/Featured";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Spinner from "./components/Spinner/Spinner";
+import { Toaster } from 'react-hot-toast';
 
 // const Home = lazy(() => import("./pages/home/Home"));
 const Layout = lazy(() => import("./components/Navbar/Layout.jsx"));
@@ -29,6 +30,11 @@ function App() {
   ) : (
     <>
       <div>
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+        containerClassName="overflow-auto"
+      />
         <Router>
           <Routes>
             <Route path="/" element={<Layout />}>
@@ -53,6 +59,7 @@ function App() {
             </Route> */}
           </Routes>
           <Routes>
+            
             <Route path="/admin/" element={<MainDashboard />}>
               <Route path="dashboard" element={<DefaultBoard />} />
               {routes.map((routes, index) => {

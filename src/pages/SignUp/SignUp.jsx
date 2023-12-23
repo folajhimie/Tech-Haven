@@ -1,10 +1,12 @@
 import { useState } from 'react';
 // import iphone from '../../assets/pictures/iPhone_12.png';
 // import all from '../../assets/svg/all.svg';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Toaster, toast } from 'react-hot-toast';
 
 const SignUp = () => {
+    const navigate = useNavigate()
     const [user, setUser] = useState({
         email:'', password: ''
     })
@@ -13,24 +15,75 @@ const SignUp = () => {
         const {name, value} = e.target;
         setUser({...user, [name]:value})
     }
+    const failedOptions = {
+        duration: 5000, // Set the duration in milliseconds
+        // icon: '🎉' 
+    };
 
-    const loginSubmit = async e =>{
+    const notifyFailed = (message) => toast.error(message, failedOptions);
+
+    const successOptions = {
+        duration: 10000, // Set the duration in milliseconds
+        // icon: '🎉' 
+    };
+      
+    const notifySuccess = () => toast.success('user Login successfully', successOptions);
+
+    const loginSubmit = async (e) => {
         e.preventDefault()
+        console.log("user login..", user);
         try {
-            console.log("access mode for active..", user);
-            await axios.post('/user/login', {...user})
+            const response = await axios.post('http://localhost:5151/api/login',
+                { ...user },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'accept': '*'
+                    }
+                });
+            console.log("all the response..", response);
 
-            // localStorage.setItem('firstLogin', true)
-            console.log("all the user login..", user);
-            
-            window.location.href = "/admin/dashboard";
-        } catch (err) {
-            alert(err.response.data.msg)
+
+            localStorage.setItem('user', response.data.token)
+
+            navigate("/admin/dashboard")
+            // toast.success('user created successfully toasted!')
+
+            notifySuccess()
+
+
+
+            // window.location.href = "/auth/login";
+            // console.log("userin the code..", response.data); 
+        } catch (error) {
+
+            // notifyFailed(error.response.data)
+            console.error('Error:', error, "all the response...", error.response, error.response.data);
+            if (!error.response.data.errors) {
+                if (error.response.data) {
+                    notifyFailed(error.response.data)
+                    return
+                }
+                
+            }else { 
+                if (error.response.data.errors.length > 1) {
+                    for (const iterator of error.response.data.errors) {
+                        notifyFailed(iterator.msg)
+                    }
+                    return 
+                }
+
+            }
         }
-    }
+    };
 
     return (
-        <section className="">
+        <div className="">
+            <Toaster
+                position="top-right"
+                reverseOrder={false}
+                containerClassName="overflow-auto"
+            />
             <div className='bg-[#F4F7FA] h-screen'>
                 <div className="grid md:grid-cols-2 xs:grid-cols-1 justify-center flex-row h-screen">
                     <div className='flex justify-start items-start bg-[#F4F7FA] md:flex sm:hidden xs:hidden '>
@@ -175,7 +228,7 @@ const SignUp = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     );
 }
 

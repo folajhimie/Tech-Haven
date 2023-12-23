@@ -1,10 +1,12 @@
 import { useState } from 'react';
 // import iphone from '../../assets/pictures/iPhone_12.png';
 // import all from '../../assets/svg/all.svg';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
+import { Toaster, toast } from 'react-hot-toast';
 
 const Register = () => {
+    const navigate = useNavigate()
     const [user, setUser] = useState({
         firstName: '',
         lastName: '',
@@ -13,40 +15,32 @@ const Register = () => {
         confirmPassword: '',
 
     })
-    // {
-    //     "firstName": "string",
-    //     "lastName": "string",
-    //     "email": "user@example.com",
-    //     "password": "string",
-    //     "confirmPassword": "string"
-    // }
+
 
     const onChangeInput = e => {
         const { name, value } = e.target;
         setUser({ ...user, [name]: value })
     }
 
-    // const registerSubmit = async e => {
-    //     e.preventDefault()
-    //     try {
-    //         const response = await axios.post('https://youshawebapi.onrender.com/account/register', { ...user })
+    const failedOptions = {
+        duration: 5000, // Set the duration in milliseconds
+        // icon: '🎉' 
+    };
 
-    //         console.log("all the response..", response);
+    const notifyFailed = (message) => toast.error(message, failedOptions);
 
+    const successOptions = {
+        duration: 10000, // Set the duration in milliseconds
+        // icon: '🎉' 
+    };
+      
+    const notifySuccess = () => toast.success('user created successfully', successOptions);
 
-    //         // localStorage.setItem('firstLogin', true)
-
-
-    //         window.location.href = "/auth/login";
-    //     } catch (err) {
-    //         console.log("response data for message..", err);
-    //         alert(err.response.data.msg)
-    //     }
-    // }
     const handleRegistration = async (e) => {
         e.preventDefault()
+        console.log("user code..", user);
         try {
-            const response = await axios.post('https://youshawebapi.onrender.com/account/register',
+            const response = await axios.post('https://yousha-demo.onrender.com/api/register',
                 { ...user },
                 {
                     headers: {
@@ -57,13 +51,36 @@ const Register = () => {
             console.log("all the response..", response);
 
 
-            // localStorage.setItem('firstLogin', true)
+            localStorage.setItem('user', response.data.token)
+
+            navigate("/auth/signup")
+            // toast.success('user created successfully toasted!')
+
+            notifySuccess()
+
 
 
             // window.location.href = "/auth/login";
-            console.log(response.data); // Handle the API response data here
+            // console.log("userin the code..", response.data); 
         } catch (error) {
-            console.error('Error:', error);
+
+            // notifyFailed(error.response.data)
+            console.error('Error:', error, "all the response...", error.response, error.response.data);
+            if (!error.response.data.errors) {
+                if (error.response.data) {
+                    notifyFailed(error.response.data)
+                    return
+                }
+                
+            }else { 
+                if (error.response.data.errors.length > 1) {
+                    for (const iterator of error.response.data.errors) {
+                        notifyFailed(iterator.msg)
+                    }
+                    return 
+                }
+
+            }
         }
     };
 
@@ -72,7 +89,12 @@ const Register = () => {
     // );
 
     return (
-        <section className="">
+        <div className="">
+            <Toaster
+                position="top-right"
+                reverseOrder={false}
+                containerClassName="overflow-auto"
+            />
             <div className='bg-[#F4F7FA] h-screen'>
                 <div className="grid md:grid-cols-2 xs:grid-cols-1 justify-center flex-row h-screen">
                     <div className='flex justify-start items-start bg-[#F4F7FA] md:flex sm:hidden xs:hidden '>
@@ -289,7 +311,7 @@ const Register = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     );
 }
 
