@@ -35,6 +35,15 @@ const Register = () => {
     };
       
     const notifySuccess = () => toast.success('user created successfully', successOptions);
+    
+    // router.get("/", (req, res) => {
+    //     res.setHeader("Access-Control-Allow-Origin", "*")
+    //     res.setHeader("Access-Control-Allow-Credentials", "true");
+    //     res.setHeader("Access-Control-Max-Age", "1800");
+    //     res.setHeader("Access-Control-Allow-Headers", "content-type");
+    //     res.setHeader( "Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS" ); 
+    //      });
+    
 
     const handleRegistration = async (e) => {
         e.preventDefault()
@@ -45,7 +54,8 @@ const Register = () => {
                 {
                     headers: {
                         'Content-Type': 'application/json',
-                        'accept': '*'
+                        'accept': '*',
+                        'Access-Control-Allow-Origin': "*"
                     }
                 });
             console.log("all the response..", response);
@@ -57,11 +67,6 @@ const Register = () => {
             // toast.success('user created successfully toasted!')
 
             notifySuccess()
-
-
-
-            // window.location.href = "/auth/login";
-            // console.log("userin the code..", response.data); 
         } catch (error) {
 
             // notifyFailed(error.response.data)

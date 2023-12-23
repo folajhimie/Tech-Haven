@@ -36,12 +36,12 @@ const VerifyPage = () => {
         });
     };
 
-    const handleInputChange = (event, field) => {
-        setAccountData({
-            ...accountData,
-            [field]: event.target.value,
-        });
-    };
+    // const handleInputChange = (event, field) => {
+    //     setAccountData({
+    //         ...accountData,
+    //         [field]: event.target.value,
+    //     });
+    // };
 
     const onChangeInput = e => {
         const { name, value } = e.target;
@@ -69,7 +69,7 @@ const VerifyPage = () => {
     
         
         try {
-            const response = await axios.post('http://localhost:5151/api/accounts', formData, {
+            const response = await axios.post('https://yousha-demo.onrender.com/api/accounts', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
