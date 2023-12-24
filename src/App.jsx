@@ -12,11 +12,22 @@ const Register = lazy(() => import("./pages/Register/Register.jsx"));
 const VerifyPage = lazy(() => import("./pages/VerifyAccount/VerifyPage.jsx"));
 const MainDashboard = lazy(() => import("./components/Dashboard/Layout/Layout.jsx"));
 const DefaultBoard = lazy(() => import("./pages/Dashboard/DefaultBoard.jsx"));
+const PrivateRoute = lazy(() => import("./middleware/privateRoute.jsx"))
+const Verification = lazy(() => import("./pages/VerifyAccount//Verification.jsx"))
 
 import routes from "./routes/index.jsx"
+// import { jwtDecode } from "jwt-decode";
+
 
 function App() {
   const [loading, setLoading] = useState(true);
+
+  // let userLogin = localStorage.getItem('user')
+
+  // const decoded = jwtDecode(userLogin);
+
+
+  // console.log("all the user...", decoded);
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 1000);
@@ -50,6 +61,10 @@ function App() {
               element={<Register />}
             />
             <Route
+              path="/auth/account-verification"
+              element={<Verification />}
+            />
+            <Route
               path="/auth/verify-account"
               element={<VerifyPage />}
             />
@@ -59,7 +74,7 @@ function App() {
             </Route> */}
           </Routes>
           <Routes>
-            
+          <Route element={<PrivateRoute />}>
             <Route path="/admin/" element={<MainDashboard />}>
               <Route path="dashboard" element={<DefaultBoard />} />
               {routes.map((routes, index) => {
@@ -83,6 +98,9 @@ function App() {
                 );
               })}
             </Route>
+
+          </Route>
+            
           </Routes>
         </Router>
       </div>

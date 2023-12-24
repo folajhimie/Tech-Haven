@@ -35,12 +35,15 @@ const SignUp = () => {
         try {
             const response = await axios.post('https://yousha-demo.onrender.com/api/login',
                 { ...user },
-                {
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'accept': '*'
-                    }
-                });
+                // {
+                //     headers: {
+                //       'Content-Type': 'application/json',
+                //       'accept': '*',
+                //       'Access-Control-Allow-Origin': "*"
+                //     },
+                //     withCredentials: true  // Include this option
+                // }
+            );
             console.log("all the response..", response);
 
 

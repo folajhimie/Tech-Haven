@@ -1,17 +1,16 @@
 /* eslint-disable react/no-unescaped-entities */
-// import React, { useEffect, useRef, useState } from 'react';
-// import iphone from '../../assets/pictures/iPhone_12.png';
-// import all from '../../assets/svg/all.svg';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import DatePicker from 'react-datepicker';
 import { useState } from 'react';
 import Download from "../../assets/svg/business/download.svg"
 import axios from "axios";
+import { Toaster, toast } from 'react-hot-toast';
 
 import "react-datepicker/dist/react-datepicker.css";
 // import PreviousMap from "postcss/lib/previous-map";
 
 const VerifyPage = () => {
+    const navigate = useNavigate()
     const [startDate, setStartDate] = useState(new Date());
     const [currentFormKey, setCurrentFormKey] = useState(0);
     
@@ -47,6 +46,12 @@ const VerifyPage = () => {
         const { name, value } = e.target;
         setAccountData({...accountData, [name]: value })
     }
+
+    const successOptions = {
+        duration: 10000, // Set the duration in milliseconds
+        // icon: '🎉' 
+    };
+    const notifySuccess = () => toast.success('user Login successfully', successOptions);
     
 
 
@@ -75,6 +80,11 @@ const VerifyPage = () => {
                 }
             });
             console.log("account in the code...", response.data, "item data...", response); // Handle the API response data here
+
+            navigate("/auth/account-verification")
+            // toast.success('user created successfully toasted!')
+
+            notifySuccess()
         } catch (error) {
             console.error('Error:', error);
         }
@@ -102,6 +112,11 @@ const VerifyPage = () => {
 
     return (
         <section className="">
+            <Toaster
+                position="top-right"
+                reverseOrder={false}
+                containerClassName="overflow-auto"
+            />
             {isThisForm(0) && (
                 <div className='bg-[#F4F7FA] h-screen'>
                     <div className="grid md:grid-cols-2 xs:grid-cols-1 justify-center flex-row h-screen">
