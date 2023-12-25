@@ -12,8 +12,7 @@ const PrivateRoute = () => {
     console.log("all the user...", decoded);
 
     //   const { userInfo } = useSelector((state) => state.auth);
-    return decoded ?
-        decoded && (decoded?.isAdmin === false) ?
+    return decoded ? decoded && (decoded?.isAdmin === false) ?
             <Navigate to='/auth/verify-account' replace />
             :
             <Outlet/>

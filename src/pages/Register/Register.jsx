@@ -53,11 +53,13 @@ const Register = () => {
                 { ...user },
                 {
                     headers: {
-                        'Content-Type': 'application/json',
-                        'accept': '*',
-                        'Access-Control-Allow-Origin': "*"
-                    }
-                });
+                      'Content-Type': 'application/json',
+                      'accept': '*',
+                      'Access-Control-Allow-Origin': "*"
+                    },
+                    // withCredentials: true  // Include this option
+                }
+            );
             console.log("all the response..", response);
 
 

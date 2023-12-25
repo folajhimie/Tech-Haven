@@ -23,7 +23,7 @@ function Verification() {
                             </div>
 
                             <div className="justify-center items-center w-full flex mt-5">
-                                <Link to="/admin/dashboard">
+                                <Link to="/auth/signup">
                                     <button className="bg-[#61297F] text-white font-semibold rounded-lg px-20 py-3 justify-center items-center  flex">Login</button>
                                 </Link>
                             </div>

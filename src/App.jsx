@@ -1,6 +1,6 @@
 import { Suspense, lazy,useEffect, useState } from "react";
 // import Featured from "./components/Navbar/Featured";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {  BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Spinner from "./components/Spinner/Spinner";
 import { Toaster } from 'react-hot-toast';
 
@@ -13,16 +13,49 @@ const VerifyPage = lazy(() => import("./pages/VerifyAccount/VerifyPage.jsx"));
 const MainDashboard = lazy(() => import("./components/Dashboard/Layout/Layout.jsx"));
 const DefaultBoard = lazy(() => import("./pages/Dashboard/DefaultBoard.jsx"));
 const PrivateRoute = lazy(() => import("./middleware/privateRoute.jsx"))
-const Verification = lazy(() => import("./pages/VerifyAccount//Verification.jsx"))
+const Verification = lazy(() => import("./pages/VerifyAccount//Verification.jsx"));
+
+import axios from "axios";
 
 import routes from "./routes/index.jsx"
 // import { jwtDecode } from "jwt-decode";
 
 
 function App() {
-  const [loading, setLoading] = useState(true);
 
-  // let userLogin = localStorage.getItem('user')
+  const [loading, setLoading] = useState(true);
+  // let location = useLocation();
+  let myToken = localStorage.getItem('user')
+  const [token, setToken] = useState(myToken ? myToken : null);
+
+  // let pathname = location.pathname
+  // console.log("some token ...", myToken, "another token..", token);
+
+  axios.defaults.headers.common["Authorization"] = "Bearer " + token
+
+  if (
+    localStorage.getItem('user') && 
+    axios.defaults.headers.common.Authorization.split(" ")[1] == null 
+    ) {
+    window.location.reload();
+  }
+
+  useEffect(() => {
+    let myToken = localStorage.getItem('user')
+
+    
+    if (myToken) {
+      setToken(myToken)
+    }
+    const parsedToken = myToken ? myToken : "";
+    // console.log("all lot of token ...", myToken, "parsed token..", parsedToken);
+    axios.defaults.headers.common["Authorization"] = "Bearer " + parsedToken
+
+    // console.log("axios token..", axios.defaults.headers.common["Authorization"]) 
+
+
+  }, [token, myToken]);
+
 
   // const decoded = jwtDecode(userLogin);
 
