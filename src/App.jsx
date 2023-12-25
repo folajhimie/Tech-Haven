@@ -29,7 +29,7 @@ function App() {
   const [token, setToken] = useState(myToken ? myToken : null);
 
   // let pathname = location.pathname
-  // console.log("some token ...", myToken, "another token..", token);
+  console.log("some token ...", myToken, "another token..", token);
 
   axios.defaults.headers.common["Authorization"] = "Bearer " + token
 
@@ -48,10 +48,10 @@ function App() {
       setToken(myToken)
     }
     const parsedToken = myToken ? myToken : "";
-    // console.log("all lot of token ...", myToken, "parsed token..", parsedToken);
+    console.log("all lot of token ...", myToken, "parsed token..", parsedToken);
     axios.defaults.headers.common["Authorization"] = "Bearer " + parsedToken
 
-    // console.log("axios token..", axios.defaults.headers.common["Authorization"]) 
+    console.log("axios token..", axios.defaults.headers.common["Authorization"]) 
 
 
   }, [token, myToken]);
