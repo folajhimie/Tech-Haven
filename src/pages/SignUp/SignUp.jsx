@@ -54,6 +54,8 @@ const SignUp = () => {
 
             notifySuccess()
 
+            window.location.reload();
+
 
 
             // window.location.href = "/auth/login";
